@@ -4,6 +4,7 @@
 
 type Animal {
   name: String!
+  id: String!
 }
 
 type GetAllAnimalResponse {

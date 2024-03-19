@@ -4,6 +4,9 @@ import { ObjectType, Field } from '@nestjs/graphql';
 export class Animal {
   @Field()
   name: string;
+
+  @Field()
+  id: string;
 }
 
 @ObjectType()
