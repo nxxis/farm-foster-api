@@ -19,7 +19,7 @@ import { DatabaseProvider } from './provider/database.provider';
       driver: ApolloDriver,
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       playground: false,
-      inrospection: true,
+      introspection: true,
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
     }),
     AnimalModule,
