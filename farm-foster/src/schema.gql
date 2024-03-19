@@ -1,0 +1,27 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Animal {
+  name: String!
+}
+
+type GetAllAnimalResponse {
+  animals: [Animal!]!
+}
+
+type CreateAnimalResponse {
+  name: String!
+}
+
+type Query {
+  GetAllAnimals: GetAllAnimalResponse!
+}
+
+type Mutation {
+  createAnimal(CreateAnimalnput: CreateAnimalInput!): CreateAnimalResponse!
+}
+
+input CreateAnimalInput {
+  name: String!
+}
