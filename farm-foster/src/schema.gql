@@ -15,12 +15,18 @@ type CreateAnimalResponse {
   name: String!
 }
 
+type DeleteAnimalResponse {
+  success: Boolean!
+  message: String!
+}
+
 type Query {
   GetAllAnimals: GetAllAnimalResponse!
 }
 
 type Mutation {
   createAnimal(CreateAnimalnput: CreateAnimalInput!): CreateAnimalResponse!
+  deleteAnimalById(id: String!): DeleteAnimalResponse!
 }
 
 input CreateAnimalInput {

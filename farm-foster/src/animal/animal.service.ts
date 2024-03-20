@@ -12,4 +12,8 @@ export class AnimalService {
   async createAnimalService(data) {
     return await this.animalRepository.createAnimalRepository(data);
   }
+
+  async deleteAnimalByIdService(id) {
+    return await this.animalRepository.deleteAnimalByIdRepository(id);
+  }
 }

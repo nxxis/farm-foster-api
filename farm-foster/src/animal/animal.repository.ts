@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Animal } from './schema/animal.schema';
 import mongoose from 'mongoose';
@@ -26,6 +26,25 @@ export class AnimalRepository {
       return await user.save();
     } catch (error) {
       return error;
+    }
+  }
+  async deleteAnimalByIdRepository(id) {
+    try {
+      const isIdValid = mongoose.Types.ObjectId.isValid(id);
+      if (!isIdValid) {
+        throw new BadRequestException('Invalid id');
+      }
+
+      const isAnimalDeleted = await this.animalModel.findByIdAndDelete({
+        _id: id,
+      });
+      if (!isAnimalDeleted) {
+        return { success: false, message: 'Animal not found' };
+      }
+
+      return { success: true, message: 'Animal deleted successfully' };
+    } catch (error) {
+      throw new Error(error);
     }
   }
 }
