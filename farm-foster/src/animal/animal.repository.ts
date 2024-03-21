@@ -28,6 +28,7 @@ export class AnimalRepository {
       return error;
     }
   }
+  
   async deleteAnimalByIdRepository(id) {
     try {
       const isIdValid = mongoose.Types.ObjectId.isValid(id);

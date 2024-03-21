@@ -20,15 +20,34 @@ type DeleteAnimalResponse {
   message: String!
 }
 
+type Plant {
+  name: String!
+  id: String!
+}
+
+type GetAllPlantResponse {
+  plants: [Plant!]!
+}
+
+type CreatePlantResponse {
+  name: String!
+}
+
 type Query {
   GetAllAnimals: GetAllAnimalResponse!
+  GetAllPlants: GetAllPlantResponse!
 }
 
 type Mutation {
   createAnimal(CreateAnimalnput: CreateAnimalInput!): CreateAnimalResponse!
   deleteAnimalById(id: String!): DeleteAnimalResponse!
+  createPlant(CreatePlantnput: CreatePlantInput!): CreatePlantResponse!
 }
 
 input CreateAnimalInput {
+  name: String!
+}
+
+input CreatePlantInput {
   name: String!
 }
